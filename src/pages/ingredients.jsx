@@ -1,18 +1,20 @@
 import AppNavbar from "../components/AppNavbar";
-import ShowList from "../components/AddIngredient";
-import AddItems from "../components/AddItems";
+import React, { useState, useContext } from "react";
+import { IngredientsContext } from "../IngredientsContext";
+import IngredientsDisplay from "../components/IngredientsDisplay";
+import AddIng from "../components/AddIng";
 
-function Ingredients(){
+const Ingredients = () => {
+    const context = useContext(IngredientsContext);
+    const [ingredients, setIngredients] = context.ingredients;
     return(
-        <div>
-            <div>
-                <AppNavbar/>
-            </div>
-
-            <div>
-                <AddItems/>
-            </div>
-        </div>
+        <>
+            <AppNavbar/>
+            {ingredients.map((m,i) => (
+                <IngredientsDisplay key={i} name={m.name} category={m.category} />
+            ))}
+            <AddIng/>
+        </>
     )
 }
 export default Ingredients;

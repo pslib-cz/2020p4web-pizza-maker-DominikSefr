@@ -7,10 +7,12 @@ import Pizza from './pages/order/pizza';
 import Ingredients from './pages/ingredients';
 import Calzone from './pages/order/calzone';
 import NotFoundPage from './pages/404';
+import { IngredientsProvider } from './IngredientsContext';
 
 function App() {
   return (
     <Router>
+      <IngredientsProvider>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/order/pizza" component={Pizza} />
@@ -18,6 +20,7 @@ function App() {
         <Route exact path="/ingredients" component={Ingredients} />
         <Route component={NotFoundPage}/>
        </Switch>
+      </IngredientsProvider>
     </Router>
   );
 }

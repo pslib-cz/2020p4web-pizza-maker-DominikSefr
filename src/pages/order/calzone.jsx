@@ -1,5 +1,5 @@
-import ShowList from "../../components/AddIngredient";
 import AppNavbar from "../../components/AppNavbar";
+import IngredientsDisplayButton from "../../components/IngredientsDisplayButton";
 
 function Calzone(){
     return(
@@ -9,7 +9,7 @@ function Calzone(){
             </div>
             <p>Calzone</p>
             <div>
-                <ShowList/>
+                <IngredientsDisplayButton/>
             </div>
         </div>
     )

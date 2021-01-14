@@ -1,5 +1,5 @@
-import ShowList from "../../components/AddIngredient";
 import AppNavbar from "../../components/AppNavbar";
+import IngredientsDisplayButton from "../../components/IngredientsDisplayButton";
 
 function Pizza(){
     return(
@@ -8,9 +8,7 @@ function Pizza(){
                 <AppNavbar/>
             </div>
             <a>Pizza</a>
-            <div>
-                <ShowList/>
-            </div>
+            <IngredientsDisplayButton/>
         </div>
     )
 }
