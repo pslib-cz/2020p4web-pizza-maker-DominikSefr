@@ -1,15 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import AppNavbar from './components/AppNavbar';
-
-
-
+import React, { Component } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Pizza from './pages/order/pizza';
+import Ingredients from './pages/ingredients';
+import Calzone from './pages/order/calzone';
+import NotFoundPage from './pages/404';
 
 function App() {
   return (
-    <div className="App">
-      <AppNavbar/>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/order/pizza" component={Pizza} />
+        <Route exact path="/order/calzone" component={Calzone} />
+        <Route exact path="/ingredients" component={Ingredients} />
+        <Route component={NotFoundPage}/>
+       </Switch>
+    </Router>
   );
 }
 
